@@ -1,0 +1,70 @@
+@import "./common.scss";
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Inter:wght@300;400;500;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Barlow Condensed', 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: 'Barlow Condensed', 'Inter', sans-serif;
+}
+
+/* This will work on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: darkgray #dddddd;
+}
+
+/* Target's on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #dddddd;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: darkgray;
+}
+
+.pos-relative {
+  position: relative;
+}
+
+/* ============  Start Custom CSS =========== */
+
+/* APP layout */
+.app-wrapper {
+  display: grid;
+  @include fullDisplay;
+
+  .my-sider {
+    @media screen and (max-width: 991px) {
+      position: fixed;
+      z-index: 999;
+    }
+  }
+
+  .app-page {
+    margin: 5px 16px;
+
+    .page-header {
+      padding-left: 16px;
+      margin-top: 5px;
+    }
+
+    .page-content {
+      overflow-y: auto;
+      height: calc(100vh - 158px);
+      background: #fff;
+      margin-bottom: 10px;
+      padding: 16px 24px;
+    }
+  }
+}
+
